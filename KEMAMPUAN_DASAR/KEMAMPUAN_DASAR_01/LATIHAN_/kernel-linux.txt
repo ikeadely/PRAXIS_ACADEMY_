@@ -1,0 +1,33 @@
+ike@adel:~$ uname -r
+5.4.0-91-generic
+
+berikut penjelasan tentang urutan dari angka-angka tersebut:
+
+    5 – Versi kernel
+    4 – Major revision
+    0 – Minor revision
+    91 – Bux fix
+    generic – Informasi spesifik distribusi. Pada Ubuntu, berarti saya meng
+
+file yang terkait dan kegunaanya :
+
+    /bin : Mencakup semua program executable biner yang diperlukan selama booting, memperbaiki, file yang dibutuhkan untuk menjalankan single-user-mode, dan perintah dasar lainnya yaitu,  cat, du, df, tar, rpm, wc, history, dll. 
+    /boot : Menyimpan file-file penting selama proses boot-up, termasuk Kernel Linux. 
+    /dev : Berisi file device untuk semua perangkat keras pada mesin misalnya, cdrom, cpu, dll 
+    /etc : Berisi file konfigurasi aplikasi, startup, shutdown, start, stop skrip untuk setiap program individu. 
+    /home : direktori Home dari user. Setiap kali user baru dibuat, sebuah direktori dengan nama user dibuat dalam direktori home yang berisi direktori lain seperti Desktop, Download, Dokumen, dll. 
+    /lib : Direktori Lib berisi modul kernel dan library yang diperlukan untuk boot sistem dan menjalankan perintah dalam file system root. 
+    /lost+found : Direktori ini dipasang selama instalasi Linux, berguna untuk memulihkan file yang dapat rusak karena hal tak terduga yang dapat mengakibatkan shut-down. 
+    /media : direktori mount sementara dibuat untuk perangkat removable seperti media / cdrom. 
+    /mnt : Direktori mount untuk mounting sistem file sementara. 
+    /opt : Optional disingkat sebagai opt. Berisi perangkat lunak aplikasi pihak ketiga. Yaitu, lampp, dll. 
+    /proc : Sebuah file-sistem virtual dan pseudo yang berisi informasi tentang proses yang berjalan dengan proses-id tertentu alias pid. 
+    /root: ini adalah direktori home dari user root dan jangan bingung dengan ‘/‘. 
+    /run : File yang berisi tentang system yang valid sampai system melakukan boot selanjutnya. 
+    /sbin : Berisi program biner yang diperlukan oleh System Administrator, untuk pemeliharaan. Yaitu, iptables, fdisk, ifconfig, swapon, reboot, dll.
+    /srv : Service disingkat sebagai ‘srv’. Direktori ini berisi server tertentu dan layanan file terkait. 
+    /sys : distribusi Linux modern memasukkan sebuah direktori /sys sebagai filesystem virtual, yang menyimpan dan memungkinkan modifikasi dari perangkat yang terhubung ke sistem. 
+    /tmp : Direktori sementara sistem, diakses oleh pengguna dan root. Menyimpan file-file sementara untuk pengguna dan sistem, sampai boot berikutnya. 
+    /usr : Mengandung binari executable, dokumentasi, kode sumber, library untuk program tingkat kedua. 
+    /var : Singkatan dari variabel. Direktori ini berisi log, lock, dsb.
+

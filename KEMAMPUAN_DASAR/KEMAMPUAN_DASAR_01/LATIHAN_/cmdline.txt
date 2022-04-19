@@ -1,0 +1,20 @@
+rm untuk mengapus file tanpa konfirmasi
+mv "file apa" nama folder untuk memindahkan ketempat file yang baru.
+mv "file name" newfile untuk mengganti  nama file 
+saat melakukan kasus diatas harus pada terminal yang ada didalam file. tidak bisa langsung pada directory karena tidak bisa ditemukan.
+ls untuk melihat file yang ada
+
+ike@adel:~$ mv adel.txt PRAXIS-ACADEMY
+ike@adel:~$ mv adel.txt dell.txt
+mv: cannot stat 'adel.txt': No such file or directory
+ike@adel:~$ ls
+Desktop    Downloads  Music     PRAXIS-ACADEMY  Templates  Videos
+Documents  examples   Pictures  Public          TOKEN.txt
+ike@adel:~$ mv TOKEN.txt tt.txt
+ike@adel:~$ ls
+Desktop    Downloads  Music     PRAXIS-ACADEMY  Templates  Videos
+Documents  examples   Pictures  Public          tt.txt
+ike@adel:~$ mv tt.txt TOKEN.txt
+ike@adel:~$ ls
+Desktop    Downloads  Music     PRAXIS-ACADEMY  Templates  Videos
+Documents  examples   Pictures  Public          TOKEN.txt
