@@ -1,82 +1,82 @@
 ## Python program to illustrate
 ## pickle.dump()
-# import pickle
-# import io
+import pickle
+import io
 
-# class SimpleObject(object):
+class SimpleObject(object):
 
-# 	def __init__(self, name):
-# 		self.name = name
-# 		l = list(name)
-# 		l.reverse()
-# 		self.name_backwards = ''.join(l)
-# 		return
+	def __init__(self, name):
+		self.name = name
+		l = list(name)
+		l.reverse()
+		self.name_backwards = ''.join(l)
+		return
 
-# data = []
-# data.append(SimpleObject('pickle'))
-# data.append(SimpleObject('cPickle'))
-# data.append(SimpleObject('last'))
+data = []
+data.append(SimpleObject('pickle'))
+data.append(SimpleObject('cPickle'))
+data.append(SimpleObject('last'))
 
 ## Simulate a file with StringIO
-# out_s = io.StringIO()
+out_s = io.StringIO()
 
 ## Write to the stream
-# for o in data:
-# 	print ('WRITING: %s (%s)' % (o.name, o.name_backwards))
+for o in data:
+	print ('WRITING: %s (%s)' % (o.name, o.name_backwards))
 # 	## pickle.dump(o, out_s)
-# 	out_s.flush()
+	out_s.flush()
 
 
 ## Python program to illustrate
 ## Picle.dumps()
-# import pickle
+import pickle
 
-# data = [ { 'a':'A', 'b':2, 'c':3.0 } ]
-# data_string = pickle.dumps(data)
-# print ('PICKLE:', data_string )
+data = [ { 'a':'A', 'b':2, 'c':3.0 } ]
+data_string = pickle.dumps(data)
+print ('PICKLE:', data_string )
 
-## Python program to illustrate
-## pickle.dump()
-# import pickle
-# import io
+# Python program to illustrate
+# pickle.dump()
+import pickle
+import io
 
-# class SimpleObject(object):
+class SimpleObject(object):
 
-# 	def __init__(self, name):
-# 		self.name = name
-# 		l = list(name)
-# 		l.reverse()
-# 		self.name_backwards = ''.join(l)
-# 		return
+	def __init__(self, name):
+		self.name = name
+		l = list(name)
+		l.reverse()
+		self.name_backwards = ''.join(l)
+		return
 
-# data = []
-# data.append(SimpleObject('pickle'))
-# data.append(SimpleObject('cPickle'))
-# data.append(SimpleObject('last'))
+data = []
+data.append(SimpleObject('pickle'))
+data.append(SimpleObject('cPickle'))
+data.append(SimpleObject('last'))
 
-## Simulate a file with StringIO
-# out_s = io.StringIO()
+# Simulate a file with StringIO
+out_s = io.StringIO()
 
 ## Write to the stream
-# for o in data:
-# 	print ('WRITING: %s (%s)' % (o.name, o.name_backwards))
+for o in data:
+	print ('WRITING: %s (%s)' % (o.name, o.name_backwards))
 	## pickle.dump(o, out_s)
-	# out_s.flush()
+	out_s.flush()
 
 ## python program to illustrate
 ## pickle.loads()
 
-# import pickle 
-# import pprint
+import pickle 
+import pprint
 
-# data1 = [ {'a':'A', 'b':2, 'c':3.0 }]
-# print ('before:',)
-# data1_string = pickle.dumps(data1)
-# data2 = pickle.loads(data1_string)
-# print ('after:',)
-# pprint.pprint(data2)
-# print('same?:', (data1 is data2))
-# print('equal?:', (data1 == data2))
+data1 = [ {'a':'A', 'b':2, 'c':3.0 }]
+print ('before:',)
+data1_string = pickle.dumps(data1)
+data2 = pickle.loads(data1_string)
+print ('after:',)
+pprint.pprint(data2)
+print('same?:', (data1 is data2))
+print('equal?:', (data1 == data2))
 
 #^^
 # import pickle
