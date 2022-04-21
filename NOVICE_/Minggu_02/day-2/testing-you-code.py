@@ -1,2 +1,11 @@
-print (assert sum([1, 2, 3]) == 6, "Should be 6")
-print (assert sum([1, 1, 1]) == 6, "Should be 6")
+# THE BASICS
+# unittest
+
+import unittest
+
+def fun(x):
+    return x + 1
+
+class MyTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual(fun(3), 4)
