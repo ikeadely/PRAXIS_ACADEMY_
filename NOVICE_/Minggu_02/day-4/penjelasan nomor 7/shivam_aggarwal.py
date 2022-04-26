@@ -2,20 +2,20 @@
 
 # example
 
-class EmailClient(object):
-    def __init__(self, config):
-        self._config = config
-    def connect(self, config):
-        pass
+# class EmailClient(object):
+#     def __init__(self, config):
+#         self._config = config
+#     def connect(self, config):
+#         pass
 
-class EmailReader(object):
-    def __init__(self, client):
-        try:
-            self._client = client
-        except Exception as e:
-            raise e    
-    def read(self):
-            pass 
+# class EmailReader(object):
+#     def __init__(self, client):
+#         try:
+#             self._client = client
+#         except Exception as e:
+#             raise e    
+#     def read(self):
+            # pass 
 
 from dependency_injector import providers, containers
 from email_client import EmailClient
@@ -37,6 +37,6 @@ if __name__ == "__main__":
         "mailbox": "INBOX"
     })
     email_reader = Readers.email_reader()
-    print email_reader.read()
+    print (email_reader.read())
 
-^^ gtw
+# ^^ gtw

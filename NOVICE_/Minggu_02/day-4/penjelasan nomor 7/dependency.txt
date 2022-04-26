@@ -1,0 +1,7 @@
+ike@adel:~$ pip install dependency-injector
+Collecting dependency-injector
+  Downloading dependency_injector-4.39.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (4.7 MB)
+     |████████████████████████████████| 4.7 MB 68 kB/s 
+Requirement already satisfied: six<=1.16.0,>=1.7.0 in /usr/lib/python3/dist-packages (from dependency-injector) (1.14.0)
+Installing collected packages: dependency-injector
+Successfully installed dependency-injector-4.39.1
