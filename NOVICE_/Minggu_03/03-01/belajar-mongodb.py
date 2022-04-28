@@ -150,3 +150,9 @@ WriteResult({ "nInserted" : 1 })
 { "_id" : ObjectId("6268c70208372d48c01460e5"), "judul" : "Pemrograman Javascript dan MongoDB", "sinopsis" : "Panduan Pemrograman Js dan MongoDB", "pengarang" : "Petani Kode", "harga" : 98000 }
 > 
 
+
+
+dilakukan pada terminal
+cek 
+
+
