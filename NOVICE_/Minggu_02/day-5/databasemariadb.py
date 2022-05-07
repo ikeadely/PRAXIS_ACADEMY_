@@ -1,3 +1,13 @@
+sudo mysql
+[sudo] password for ike:            
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 43
+Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1 Ubuntu 20.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
 MariaDB [(none)]> show databases;
 +--------------------+
 | Database           |
