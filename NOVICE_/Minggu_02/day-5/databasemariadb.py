@@ -71,3 +71,70 @@ MariaDB [latihan]> select * from tabel_biodata;
 MariaDB [latihan]>  Ctrl-C -- exit!
 Aborted
 
+
+menggunakan mysql setelah ??.txt dijalankan
+
+$ sudo mysql
+[sudo] password for ike:            
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.29-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0,63 sec)
+
+mysql> create database adel
+    -> create database adel;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create database adel' at line 2
+mysql> \c
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0,00 sec)
+
+mysql> create database latihan;
+Query OK, 1 row affected (0,25 sec)
+
+mysql> use latihan;
+Database changed
+mysql> create table tabel_nama (nama char(20), tempat char(70));
+Query OK, 0 rows affected (0,97 sec)
+
+mysql> desc tabel_nama;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| nama   | char(20) | YES  |     | NULL    |       |
+| tempat | char(70) | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+2 rows in set (0,09 sec)
+
+mysql> exit
+Bye
+
+
+
