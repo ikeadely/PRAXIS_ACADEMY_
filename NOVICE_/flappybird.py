@@ -59,8 +59,8 @@ for i in range(2):
     p2 = Bottom(350)
     pipas.add(p1)
     pipas.add(p2)
-    all_sprites.add(p1)
-    all_sprites.add(p2)
+    all_sprite.add(p1)
+    all_sprite.add(p2)
 
 all_sprite = pygame.sprite.Group()
 bird = Bird()
