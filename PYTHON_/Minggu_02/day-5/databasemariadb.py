@@ -137,4 +137,40 @@ mysql> exit
 Bye
 
 
+~$ sudo mariadb
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1 Ubuntu 20.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| praxis             |
++--------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [(none)]> DROP DATABASES praxis;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DATABASES praxis' at line 1
+MariaDB [(none)]> DROP DATABASE praxis;
+Query OK, 0 rows affected (0.188 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+3 rows in set (0.000 sec)
+
+MariaDB [(none)]> 
 
