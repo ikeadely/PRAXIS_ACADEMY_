@@ -5,7 +5,3 @@
 LATIHAN MEMBUAT DATABASE MARIADB
 
 latihan membuat database mongodb
-
-
-
-
