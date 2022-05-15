@@ -150,9 +150,38 @@ WriteResult({ "nInserted" : 1 })
 { "_id" : ObjectId("6268c70208372d48c01460e5"), "judul" : "Pemrograman Javascript dan MongoDB", "sinopsis" : "Panduan Pemrograman Js dan MongoDB", "pengarang" : "Petani Kode", "harga" : 98000 }
 > 
 
+$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("365c78d7-37cf-4db2-b4d8-9a7e23fb87d2") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2022-05-15T14:11:22.611+0700 I STORAGE  [initandlisten] 
+2022-05-15T14:11:22.611+0700 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2022-05-15T14:11:22.611+0700 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2022-05-15T14:11:26.300+0700 I CONTROL  [initandlisten] 
+2022-05-15T14:11:26.300+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-05-15T14:11:26.300+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-05-15T14:11:26.300+0700 I CONTROL  [initandlisten] 
+> show dbs
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+tokobuku  0.000GB
+> db
+test
+> use tokobuku
+switched to db tokobuku
+> db.drobDatabase()
+2022-05-15T15:12:09.194+0700 E QUERY    [thread1] TypeError: db.drobDatabase is not a function :
+@(shell):1:1
+> db.dropDatabase()
+{ "dropped" : "tokobuku", "ok" : 1 }
+
+drop database untuk menghapus database
 
 
-dilakukan pada terminal
-cek 
+untuk menjalankan mongo db semua dilakukan pada terminal
+
 
 
