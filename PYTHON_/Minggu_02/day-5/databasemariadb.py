@@ -174,3 +174,48 @@ MariaDB [(none)]> show databases;
 
 MariaDB [(none)]> 
 
+ike@adel:~$ sudo mariadb
+[sudo] password for ike:            
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1 Ubuntu 20.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| film               |
+| information_schema |
+| mysql              |
+| pelatihan          |
+| performance_schema |
++--------------------+
+5 rows in set (0.378 sec)
+
+MariaDB [(none)]> use pelatihan
+Database changed
+MariaDB [pelatihan]> create table tabel_pelatihan (nama char(20), umur char(50));
+Query OK, 0 rows affected (1.446 sec)
+
+MariaDB [pelatihan]> desv tabel_pelatihan;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desv tabel_pelatihan' at line 1
+MariaDB [pelatihan]> desc tabel_pelatihan;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| nama  | char(20) | YES  |     | NULL    |       |
+| umur  | char(50) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.128 sec)
+
+MariaDB [pelatihan]> insert into tabel_pelatihan values('chamidcha', '29');
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+ERROR: Can't connect to the server
+
+unknown [pelatihan]> 
