@@ -1,0 +1,652 @@
+ike@adel:~$ sudo apt get update
+apt
+Usage: apt command [options]
+       apt help command [options]
+
+Commands:
+  add-repository   - Add entries to apt sources.list
+  autoclean        - Erase old downloaded archive files
+  autopurge        - Remove packages with their configuration files and automatically remove all unused packages
+  autoremove       - Remove automatically all unused packages
+  build            - Build binary or source packages from sources
+  build-dep        - Configure build-dependencies for source packages
+  changelog        - View a package's changelog
+  check            - Verify that there are no broken dependencies
+  clean            - Erase downloaded archive files
+  contains         - List packages containing a file
+  content          - List files contained in a package
+  deb              - Install a .deb package
+  depends          - Show raw dependency information for a package
+  dist-upgrade     - Upgrade the system by removing/installing/upgrading packages
+  download         - Download the .deb file for a package
+  edit-sources     - Edit /etc/apt/sources.list with your preferred text editor
+  dselect-upgrade  - Follow dselect selections
+  full-upgrade     - Same as 'dist-upgrade'
+  held             - List all held packages
+  help             - Show help for a command
+  hold             - Hold a package
+  install          - Install/upgrade packages
+  list             - List packages based on package names
+  policy           - Show policy settings
+  purge            - Remove packages and their configuration files
+  recommends       - List missing recommended packages for a particular package
+  rdepends         - Show reverse dependency information for a package
+  reinstall        - Download and (possibly) reinstall a currently installed package
+  remove           - Remove packages
+  search           - Search for a package by name and/or expression
+  show             - Display detailed information about a package
+  showhold         - Same as 'held'
+  showsrc          - Display all the source package records that match the given package name
+  source           - Download source archives
+  sources          - Same as 'edit-sources'
+  unhold           - Unhold a package
+  update           - Download lists of new/upgradable packages
+  upgrade          - Perform a safe upgrade
+  version          - Show the installed version of a package
+
+ike@adel:~$ sudo apt-get update
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Hit:2 http://archive.canonical.com/ubuntu focal InRelease    
+Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease       
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1.453 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1.792 kB]
+Ign:9 http://packages.linuxmint.com una InRelease            
+Hit:10 http://packages.linuxmint.com una Release             
+Ign:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 InRelease
+Ign:13 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease
+Get:14 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release [5.378 B]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages [434 kB]
+Get:16 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release [4.406 B]
+Get:17 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release.gpg [801 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [652 kB]
+Get:19 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [250 kB]
+Get:20 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release.gpg [801 B]
+Get:21 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40,8 kB]
+Get:22 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4/multiverse amd64 Packages [23,5 kB]
+Get:23 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [10,2 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main Translation-en [330 kB]
+Get:25 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4/multiverse arm64 Packages [18,3 kB]
+Get:26 http://security.ubuntu.com/ubuntu focal-security/restricted i386 Packages [23,0 kB]
+Get:27 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0/multiverse arm64 Packages [13,5 kB]
+Get:28 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0/multiverse amd64 Packages [15,6 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [277 kB]
+Get:30 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [914 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [15,1 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/restricted i386 Packages [24,3 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [976 kB]
+Get:34 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [130 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 c-n-f Metadata [520 B]
+Get:36 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [922 kB]
+Get:37 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 c-n-f Metadata [520 B]
+Get:38 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [703 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [679 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [207 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [390 kB]
+Get:42 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages [551 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [20,7 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal-updates/multiverse i386 Packages [8.440 B]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [24,4 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]
+Get:47 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [596 B]
+Get:48 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [9.584 B]
+Get:49 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30,7 kB]
+Get:50 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [125 kB]
+Get:51 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [66,3 kB]
+Get:52 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [14,4 kB]
+Get:53 http://security.ubuntu.com/ubuntu focal-security/multiverse i386 Packages [7.196 B]
+Get:54 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [22,2 kB]
+Get:55 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5.376 B]
+Get:56 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2.464 B]
+Get:57 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [512 B]
+Fetched 11,5 MB in 41s (283 kB/s)                            
+Reading package lists... Done
+ike@adel:~$ sudo systemctl start mongod
+ike@adel:~$ sudo systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disa>
+     Active: active (running) since Wed 2022-05-18 09:53:32 W>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Ser>
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disab>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WI>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Serv>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabl>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Serve>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disable>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB;>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; >
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled;>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 1>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; >
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; v>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19s>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; ve>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19s >
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; v>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19s>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+set mark: ...skipping...
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; v>
+     Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19s>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 5265 (mongod)
+     Memory: 208.7M
+     CGroup: /system.slice/mongod.service
+             └─5265 /usr/bin/mongod --config /etc/mongod.conf
+
+May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+lines 1-10/10 (END)
+^C
+ike@adel:~$ mongo
+MongoDB shell version v4.4.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("054f7812-29c7-4ae1-89d4-bc16d4ef9015") }
+MongoDB server version: 4.4.11
+---
+The server generated these startup warnings when booting: 
+        2022-05-18T09:53:36.560+07:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-05-18T09:53:39.281+07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> db
+test
+> use adel
+switched to db adel
+> db.adel.insert({
+... judul: "lya"
+... name: "ike"
+... })
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):3:0
+> db.adel.insert({
+... judul: "PRAXIS",
+... anggota: "enam",
+... tempat: "jalan merapi",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.adel.count()
+1
+> db.adel.find()
+{ "_id" : ObjectId("628461e6cae48458d52aaedf"), "judul" : "PRAXIS", "anggota" : "enam", "tempat" : "jalan merapi" }
+> db.adel.find().pretty()
+{
+	"_id" : ObjectId("628461e6cae48458d52aaedf"),
+	"judul" : "PRAXIS",
+	"anggota" : "enam",
+	"tempat" : "jalan merapi"
+}
+> db.users.insertOne({ name: 'Onesinus SPT', username: ')
+uncaught exception: SyntaxError: '' literal not terminated before end of script :
+@(shell):1:55
+> db.users.insertOne({ name: 'adelya', username: 'adel', password: 4646 });
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("6284633ccae48458d52aaee0")
+}
+> show collections;
+adel
+users
+> db.users.find()
+{ "_id" : ObjectId("6284633ccae48458d52aaee0"), "name" : "adelya", "username" : "adel", "password" : 4646 }
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("6284633ccae48458d52aaee0"),
+	"name" : "adelya",
+	"username" : "adel",
+	"password" : 4646
+}
+> db.users.findAndModify({ query: { username: 'adel' }, update:  {name : 
+... 
+... clear
+... 
+
