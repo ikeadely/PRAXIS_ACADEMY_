@@ -1,5 +1,6 @@
 ike@adel:~$ sudo systemctl start mongod
 [sudo] password for ike:            
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
@@ -56,6 +57,7 @@ Processing triggers for man-db (2.9.1-1) ...
 (Reading database ... 359975 files and directories currently installed.)
 Purging configuration files for mongodb-org-server (4.4.11) ...
 Purging configuration files for mongodb-org (4.4.11) ...
+
 ike@adel:~$ sudo -H gedit /etc/apt/sources.list.d/pgdg.list
 
 (gedit:2208): Tepl-WARNING **: 13:02:28.719: GVfs metadata is not supported. Fallback to TeplMetadataManager. Either GVfs is not correctly installed or GVfs metadata are not supported on this platform. In the latter case, you should configure Tepl with --disable-gvfs-metadata.
@@ -73,24 +75,35 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 ike@adel:~$ ^C
+
 ike@adel:~$ sudo rm -rf /tmp/mongodb-27017.sock
+
 ike@adel:~$ sudo service mongod start
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo systemctl start mongod
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo chown -R mongodb:mongodb /var/lib/mongodb
+
 ike@adel:~$ sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
 chown: cannot access '/tmp/mongodb-27017.sock': No such file or directory
+
 ike@adel:~$ sudo systemctl start mongod
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo systemctl start mongod
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo -H gedit /etc/apt/sources.list.d/pgdg.list
 
 (gedit:4369): Tepl-WARNING **: 13:11:33.372: GVfs metadata is not supported. Fallback to TeplMetadataManager. Either GVfs is not correctly installed or GVfs metadata are not supported on this platform. In the latter case, you should configure Tepl with --disable-gvfs-metadata.
+
 ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 OK
+
 ike@adel:~$ apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
@@ -105,8 +118,10 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 ike@adel:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+
 ike@adel:~$ apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease                         
@@ -126,6 +141,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 ike@adel:~$ apt upgrade
 Reading package lists... Done
 Building dependency tree       
@@ -135,10 +151,13 @@ The following packages were automatically installed and are no longer required:
   mongodb-database-tools mongodb-mongosh
 Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 ike@adel:~$ ps aux | grep -i apt
 ike         5804  0.0  0.0   9036   720 pts/0    S+   13:13   0:00 grep --color=auto -i apt
+
 ike@adel:~$ sudo kill 5804
 kill: (5804): No such process
+
 ike@adel:~$ apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease                         
@@ -155,6 +174,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 ike@adel:~$ sudo apt-get install -y mongodb-org
 Reading package lists... Done
 Building dependency tree       
@@ -198,7 +218,9 @@ Setting up mongodb-org-database (5.0.8) ...
 Setting up mongodb-org-tools (5.0.8) ...
 Setting up mongodb-org (5.0.8) ...
 Processing triggers for man-db (2.9.1-1) ...
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
@@ -215,6 +237,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
@@ -228,12 +251,18 @@ May 17 13:16:29 adel systemd[1]: mongod.service: Main process exited, code=dump>
 May 17 13:16:29 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
 
 ike@adel:~$ sudo rm -rf /tmp/mongodb-27017.sock
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo chown -R mongodb:mongodb /var/lib/mongodb
+
 ike@adel:~$ sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
 chown: cannot access '/tmp/mongodb-27017.sock': No such file or directory
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo systemctl restart mongod
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
@@ -248,10 +277,14 @@ May 17 13:19:58 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
 
 ike@adel:~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
 Illegal instruction
+
 ike@adel:~$ sudo rm  /var/lib/mongodb/mongod.lock.
 rm: cannot remove '/var/lib/mongodb/mongod.lock.': No such file or directory
+
 ike@adel:~$ sudo purge  /var/lib/mongodb/mongod.lock.
 sudo: purge: command not found
+
+
 ike@adel:~$ sudo apt purge mongodb-org*
 Reading package lists... Done
 Building dependency tree       
@@ -297,11 +330,17 @@ Processing triggers for man-db (2.9.1-1) ...
 (Reading database ... 359975 files and directories currently installed.)
 Purging configuration files for mongodb-org-database (5.0.8) ...
 Purging configuration files for mongodb-org-server (5.0.8) ...
+
 ike@adel:~$ sudo n-i
 sudo: n-i: command not found
+
+
+
 ike@adel:~$ sudo -i
+
 root@adel:~# wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 OK
+
 root@adel:~# apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                                               
@@ -309,6 +348,7 @@ Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease
 Hit:4 http://archive.canonical.com/ubuntu focal InRelease                                                                                                               
 Get:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]                                                                         
 Ign:6 http://packages.linuxmint.com una InRelease                                                                                                         
+
 Hit:7 http://packages.linuxmint.com una Release                                                          
 Ign:8 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease                                
 Hit:10 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release
@@ -318,6 +358,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 root@adel:~# apt upgrade
 Reading package lists... Done
 Building dependency tree       
@@ -327,8 +368,10 @@ The following packages were automatically installed and are no longer required:
   mongodb-database-tools mongodb-mongosh
 Use 'apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 root@adel:~# echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+
 root@adel:~# apt update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                                               
@@ -345,6 +388,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 root@adel:~# apt upgrade
 Reading package lists... Done
 Building dependency tree       
@@ -354,10 +398,12 @@ The following packages were automatically installed and are no longer required:
   mongodb-database-tools mongodb-mongosh
 Use 'apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 root@adel:~# apt update
-Hit:1 http://packages.microsoft.com/repos/code stable InRelease                                                                                                         
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease                                                                                                        
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                                               
 Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease                                                                                                                 
+
 Ign:4 http://packages.linuxmint.com una InRelease                                                                                          
 Get:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]                                                                    
 Hit:6 http://packages.linuxmint.com una Release                                                                                                      
@@ -370,6 +416,7 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 All packages are up to date.
+
 root@adel:~# sudo apt-get install -y mongodb-org
 Reading package lists... Done
 Building dependency tree       
@@ -411,8 +458,13 @@ Setting up mongodb-org-database (5.0.8) ...
 Setting up mongodb-org-tools (5.0.8) ...
 Setting up mongodb-org (5.0.8) ...
 Processing triggers for man-db (2.9.1-1) ...
+
 root@adel:~# logout
+
+
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
@@ -424,11 +476,14 @@ ike@adel:~$ sudo systemctl status mongod
 May 17 13:31:55 adel systemd[1]: Started MongoDB Database Server.
 May 17 13:31:56 adel systemd[1]: mongod.service: Main process exited, code=dumped, status=4/ILL
 May 17 13:31:56 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
+
 ike@adel:~$ mongosh
 Current Mongosh Log ID:	628341fc6aac5755ec829822
 Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.4.1
 MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+
 ike@adel:~$ sudo service mongod stop
+
 ike@adel:~$ sudo apt-get purge mongodb-org*
 Reading package lists... Done
 Building dependency tree       
@@ -447,6 +502,7 @@ Note, selecting 'mongodb-org-tools-unstable' for glob 'mongodb-org*'
 Note, selecting 'mongodb-org-database' for glob 'mongodb-org*'
 Note, selecting 'mongodb-org' for glob 'mongodb-org*'
 Note, selecting 'mongodb-org-server' for glob 'mongodb-org*'
+
 Package 'mongodb-org-tools-unstable' is not installed, so not removed
 Package 'mongodb-org-unstable' is not installed, so not removed
 Package 'mongodb-org-unstable-mongos' is not installed, so not removed
@@ -474,8 +530,11 @@ Processing triggers for man-db (2.9.1-1) ...
 (Reading database ... 359975 files and directories currently installed.)
 Purging configuration files for mongodb-org-database (5.0.8) ...
 Purging configuration files for mongodb-org-server (5.0.8) ...
+
 ike@adel:~$ sudo rm -r /var/log/mongodb
+
 ike@adel:~$ sudo rm -r /var/lib/mongodb
+
 ike@adel:~$ mongod
 
 Command 'mongod' not found, but can be installed with:
@@ -545,6 +604,7 @@ ike@adel:~$ mongod
 2022-05-17T13:41:20.450+0700 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory /data/db not found., terminating
 2022-05-17T13:41:20.450+0700 I CONTROL  [initandlisten] now exiting
 2022-05-17T13:41:20.450+0700 I CONTROL  [initandlisten] shutting down with code:100
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service
      Loaded: not-found (Reason: Unit mongod.service not found.)
@@ -556,7 +616,9 @@ May 17 13:31:56 adel systemd[1]: mongod.service: Main process exited, code=dumpe
 May 17 13:31:56 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
 ike@adel:~$ sudo systemctl start mongod
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo systemctl daemon-reload
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service
      Loaded: not-found (Reason: Unit mongod.service not found.)
@@ -566,6 +628,7 @@ ike@adel:~$ sudo systemctl status mongod
 May 17 13:31:55 adel systemd[1]: Started MongoDB Database Server.
 May 17 13:31:56 adel systemd[1]: mongod.service: Main process exited, code=dumped, status=4/ILL
 May 17 13:31:56 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service
      Loaded: not-found (Reason: Unit mongod.service not found.)
@@ -575,8 +638,10 @@ ike@adel:~$ sudo systemctl status mongod
 May 17 13:31:55 adel systemd[1]: Started MongoDB Database Server.
 May 17 13:31:56 adel systemd[1]: mongod.service: Main process exited, code=dumped, status=4/ILL
 May 17 13:31:56 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
+
 ike@adel:~$ sudo systemctl enable mongod
 Failed to enable unit: Unit file mongod.service does not exist.
+
 ike@adel:~$ sudo apt purge mongodb-org*
 Reading package lists... Done
 Building dependency tree       
@@ -613,14 +678,19 @@ The following packages were automatically installed and are no longer required:
   mongodb-database-tools mongodb-mongosh
 Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 ike@adel:~$ sudo rm -r /var/lib/mongodb
 rm: cannot remove '/var/lib/mongodb': No such file or directory
+
 ike@adel:~$ sudo rm -r /var/log/mongodb
 rm: cannot remove '/var/log/mongodb': No such file or directory
+
 ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 OK
+
 ike@adel:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+
 ike@adel:~$ sudo apt-get update
 Get:1 http://packages.microsoft.com/repos/code stable InRelease [10,4 kB]
 Get:2 http://packages.microsoft.com/repos/code stable/main armhf Packages [84,7 kB]                                                                                     
@@ -642,6 +712,7 @@ Get:19 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4/multiverse amd6
 Get:20 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4/multiverse arm64 Packages [18,2 kB]
 Fetched 648 kB in 4s (166 kB/s)        
 Reading package lists... Done
+
 ike@adel:~$ sudo apt-get install mongodb-org=4.4.8 mongodb-org-server=4.4.8 mongodb-org-shell=4.4.8 mongodb-org-mongos=4.4.8 mongodb-org-tools=4.4.8
 Reading package lists... Done
 Building dependency tree       
@@ -692,6 +763,7 @@ Errors were encountered while processing:
  /tmp/apt-dpkg-install-JhWFRJ/1-mongodb-org-server_4.4.8_amd64.deb
  /tmp/apt-dpkg-install-JhWFRJ/2-mongodb-org-mongos_4.4.8_amd64.deb
 E: Sub-process /usr/bin/dpkg returned an error code (1)
+
 ike@adel:~$ mongod --version
 db version v3.6.8
 git version: 8e540c0b6db93ce994cc548f000900bdc740f80a
@@ -701,6 +773,7 @@ modules: none
 build environment:
     distarch: x86_64
     target_arch: x86_64
+
 ike@adel:~$ mongod --version
 db version v3.6.8
 git version: 8e540c0b6db93ce994cc548f000900bdc740f80a
@@ -710,9 +783,12 @@ modules: none
 build environment:
     distarch: x86_64
     target_arch: x86_64
+
 ike@adel:~$ sudo systemctl start mongod
 Failed to start mongod.service: Unit mongod.service not found.
+
 ike@adel:~$ sudo service mongod stop 
+
 ike@adel:~$ sudo apt purge mongo*
 Reading package lists... Done
 Building dependency tree       
@@ -878,12 +954,15 @@ Removing mongodb-server-core (1:3.6.9+really3.6.8+90~g8e540c0b6d-0ubuntu5.3) ...
 Processing triggers for man-db (2.9.1-1) ...
 (Reading database ... 359989 files and directories currently installed.)
 Purging configuration files for mongodb-org (4.4.8) ...
-ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 
+ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 OK
+
 ike@adel:~$ 
+
 ike@adel:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+
 ike@adel:~$ sudo apt-get update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Hit:2 http://archive.canonical.com/ubuntu focal InRelease                                                                                                               
@@ -899,6 +978,7 @@ Hit:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release
 Get:14 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
 Fetched 336 kB in 3s (113 kB/s)    
 Reading package lists... Done
+
 ike@adel:~$ sudo apt-get install -y mongodb-org=4.4.11 mongodb-org-server=4.4.11 mongodb-org-shell=4.4.11 mongodb-org-mongos=4.4.11 mongodb-org-tools=4.4.11
 Reading package lists... Done
 Building dependency tree       
@@ -941,7 +1021,9 @@ Setting up mongodb-org-database-tools-extra (5.0.8) ...
 Setting up mongodb-org-tools (4.4.11) ...
 Setting up mongodb-org (4.4.11) ...
 Processing triggers for man-db (2.9.1-1) ...
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
