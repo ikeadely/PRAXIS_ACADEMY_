@@ -103,7 +103,9 @@ Get:56 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 
 Get:57 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [512 B]
 Fetched 11,5 MB in 41s (283 kB/s)                            
 Reading package lists... Done
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disa>
@@ -116,30 +118,6 @@ ike@adel:~$ sudo systemctl status mongod
 
 May 18 09:53:32 adel systemd[1]: Started MongoDB Database Ser>
 lines 1-10/10 (END)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disab>
      Active: active (running) since Wed 2022-05-18 09:53:32 WI>
@@ -164,29 +142,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Serv>
 ~
 ~
 lines 1-10/10 (END)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabl>
@@ -215,27 +170,6 @@ lines 1-10/10 (END)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disable>
      Active: active (running) since Wed 2022-05-18 09:53:32 WIB;>
@@ -261,29 +195,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 ~
 lines 1-10/10 (END)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled>
      Active: active (running) since Wed 2022-05-18 09:53:32 WIB; >
@@ -308,28 +219,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 ~
 ~
 lines 1-10/10 (END)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ● mongod.service - MongoDB Database Server
@@ -358,28 +247,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 lines 1-10/10 (END)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; >
      Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19>
@@ -404,29 +271,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 ~
 ~
 lines 1-10/10 (END)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; v>
@@ -454,28 +298,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 lines 1-10/10 (END)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; ve>
      Active: active (running) since Wed 2022-05-18 09:53:32 WIB; 19s >
@@ -500,29 +322,6 @@ May 18 09:53:32 adel systemd[1]: Started MongoDB Database Server.
 ~
 ~
 lines 1-10/10 (END)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; v>
