@@ -1,0 +1,411 @@
+ike@adel:~$ mongo
+Illegal instruction (core dumped)
+ike@adel:~$ sudo sytemctl start mongod
+[sudo] password for ike:            
+sudo: sytemctl: command not found
+ike@adel:~$ sudo systemctl start mongod
+ike@adel:~$ mongod --version
+Illegal instruction (core dumped)
+ike@adel:~$ sudo service mongod stop
+ike@adel:~$ sudo apt-get purge mongodb-org*
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 6431 (apt)
+N: Be aware that removing the lock file is not a solution and may break your system.
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+ike@adel:~$ sudo rm -r /var/log/mongodb
+ike@adel:~$ sudo rm -r /var/lib/mongodb
+ike@adel:~$ sudo apt purge mongodb-org*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'mongodb-org-unstable-tools' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-mongos' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-tools' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-database-tools-extra' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-server' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-shell' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-shell' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-mongos' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-database-tools-extra' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-tools-unstable' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-database' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-server' for glob 'mongodb-org*'
+Package 'mongodb-org-tools-unstable' is not installed, so not removed
+Package 'mongodb-org-unstable' is not installed, so not removed
+Package 'mongodb-org-unstable-mongos' is not installed, so not removed
+Package 'mongodb-org-unstable-server' is not installed, so not removed
+Package 'mongodb-org-unstable-shell' is not installed, so not removed
+Package 'mongodb-org-unstable-tools' is not installed, so not removed
+Package 'mongodb-org-unstable-database-tools-extra' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  mongodb-database-tools mongodb-mongosh
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  mongodb-org* mongodb-org-database* mongodb-org-database-tools-extra*
+  mongodb-org-mongos* mongodb-org-server* mongodb-org-shell*
+  mongodb-org-tools*
+0 upgraded, 0 newly installed, 7 to remove and 0 not upgraded.
+After this operation, 245 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 360015 files and directories currently installed.)
+Removing mongodb-org (5.0.8) ...
+Removing mongodb-org-database (5.0.8) ...
+Removing mongodb-org-tools (5.0.8) ...
+Removing mongodb-org-database-tools-extra (5.0.8) ...
+Removing mongodb-org-mongos (5.0.8) ...
+Removing mongodb-org-server (5.0.8) ...
+Removing mongodb-org-shell (5.0.8) ...
+Processing triggers for man-db (2.9.1-1) ...
+(Reading database ... 359978 files and directories currently installed.)
+Purging configuration files for mongodb-org-database (5.0.8) ...
+Purging configuration files for mongodb-org-server (5.0.8) ...
+ike@adel:~$ sudo -i
+root@adel:~# wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+OK
+root@adel:~# apt update
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Ign:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 InRelease      
+Hit:4 http://archive.canonical.com/ubuntu focal InRelease                      
+Hit:5 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Ign:6 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease      
+Ign:7 http://packages.linuxmint.com una InRelease                              
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Hit:9 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release        
+Hit:10 http://packages.linuxmint.com una Release                               
+Hit:13 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release       
+Get:15 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Fetched 336 kB in 2s (144 kB/s)     
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+root@adel:~# apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  mongodb-database-tools mongodb-mongosh
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@adel:~# echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+root@adel:~# deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+
+Command 'deb' not found, did you mean:
+
+  command 'dub' from deb dub (1.19.0-1build2)
+  command 'dab' from deb bsdgames (2.17-28build1)
+  command 'debi' from deb devscripts (2.20.2ubuntu2)
+  command 'deb3' from deb quilt (0.65-3)
+  command 'derb' from deb icu-devtools (66.1-2ubuntu2.1)
+  command 'debc' from deb devscripts (2.20.2ubuntu2)
+  command 'edb' from deb edb-debugger (1.0.0-1build3)
+  command 'dep' from deb go-dep (0.5.4-3)
+  command 'dex' from deb dex (0.8.0-2)
+
+Try: apt install <deb name>
+
+root@adel:~# apt update
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Ign:2 http://packages.linuxmint.com una InRelease                              
+Ign:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 InRelease      
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Ign:6 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease      
+Hit:7 http://packages.linuxmint.com una Release                                
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Hit:10 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release       
+Hit:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release       
+Hit:13 http://archive.ubuntu.com/ubuntu focal-backports InRelease   
+Hit:15 http://archive.canonical.com/ubuntu focal InRelease                     
+Fetched 228 kB in 31s (7.309 B/s)
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+root@adel:~# apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  mongodb-database-tools mongodb-mongosh
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@adel:~# sudo apt-get install -y mongodb-org
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  mongodb-org-database mongodb-org-database-tools-extra mongodb-org-mongos
+  mongodb-org-server mongodb-org-shell mongodb-org-tools
+The following NEW packages will be installed:
+  mongodb-org mongodb-org-database mongodb-org-database-tools-extra
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/59,3 MB of archives.
+After this operation, 245 MB of additional disk space will be used.
+Selecting previously unselected package mongodb-org-shell.
+(Reading database ... 359979 files and directories currently installed.)
+Preparing to unpack .../0-mongodb-org-shell_5.0.8_amd64.deb ...
+Unpacking mongodb-org-shell (5.0.8) ...
+Selecting previously unselected package mongodb-org-server.
+Preparing to unpack .../1-mongodb-org-server_5.0.8_amd64.deb ...
+Unpacking mongodb-org-server (5.0.8) ...
+Selecting previously unselected package mongodb-org-mongos.
+Preparing to unpack .../2-mongodb-org-mongos_5.0.8_amd64.deb ...
+Unpacking mongodb-org-mongos (5.0.8) ...
+Selecting previously unselected package mongodb-org-database-tools-extra.
+Preparing to unpack .../3-mongodb-org-database-tools-extra_5.0.8_amd64.deb ...
+Unpacking mongodb-org-database-tools-extra (5.0.8) ...
+Selecting previously unselected package mongodb-org-database.
+Preparing to unpack .../4-mongodb-org-database_5.0.8_amd64.deb ...
+Unpacking mongodb-org-database (5.0.8) ...
+Selecting previously unselected package mongodb-org-tools.
+Preparing to unpack .../5-mongodb-org-tools_5.0.8_amd64.deb ...
+Unpacking mongodb-org-tools (5.0.8) ...
+Selecting previously unselected package mongodb-org.
+Preparing to unpack .../6-mongodb-org_5.0.8_amd64.deb ...
+Unpacking mongodb-org (5.0.8) ...
+Setting up mongodb-org-server (5.0.8) ...
+Setting up mongodb-org-shell (5.0.8) ...
+Setting up mongodb-org-mongos (5.0.8) ...
+Setting up mongodb-org-database-tools-extra (5.0.8) ...
+Setting up mongodb-org-database (5.0.8) ...
+Setting up mongodb-org-tools (5.0.8) ...
+Setting up mongodb-org (5.0.8) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@adel:~# logout
+ike@adel:~$ sudo systemctl start mongod
+ike@adel:~$ sudo systemctl status  mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: failed (Result: core-dump) since Thu 2022-05-19 08:06:31 WIB; 10s >
+       Docs: https://docs.mongodb.org/manual
+    Process: 10449 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=du>
+   Main PID: 10449 (code=dumped, signal=ILL)
+
+May 19 08:06:30 adel systemd[1]: Started MongoDB Database Server.
+May 19 08:06:31 adel systemd[1]: mongod.service: Main process exited, code=dump>
+May 19 08:06:31 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
+...skipping...
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: failed (Result: core-dump) since Thu 2022-05-19 08:06:31 WIB; 10s >
+       Docs: https://docs.mongodb.org/manual
+    Process: 10449 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=du>
+   Main PID: 10449 (code=dumped, signal=ILL)
+
+May 19 08:06:30 adel systemd[1]: Started MongoDB Database Server.
+May 19 08:06:31 adel systemd[1]: mongod.service: Main process exited, code=dump>
+May 19 08:06:31 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+ike@adel:~$ sudo system mongod stop
+sudo: system: command not found
+ike@adel:~$ sudo apt-get purge mongodb-org*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'mongodb-org-unstable-tools' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-mongos' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-tools' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-database-tools-extra' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-server' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-shell' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-shell' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable-mongos' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-database-tools-extra' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-unstable' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-tools-unstable' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-database' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org' for glob 'mongodb-org*'
+Note, selecting 'mongodb-org-server' for glob 'mongodb-org*'
+Package 'mongodb-org-tools-unstable' is not installed, so not removed
+Package 'mongodb-org-unstable' is not installed, so not removed
+Package 'mongodb-org-unstable-mongos' is not installed, so not removed
+Package 'mongodb-org-unstable-server' is not installed, so not removed
+Package 'mongodb-org-unstable-shell' is not installed, so not removed
+Package 'mongodb-org-unstable-tools' is not installed, so not removed
+Package 'mongodb-org-unstable-database-tools-extra' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  mongodb-database-tools mongodb-mongosh
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  mongodb-org* mongodb-org-database* mongodb-org-database-tools-extra*
+  mongodb-org-mongos* mongodb-org-server* mongodb-org-shell*
+  mongodb-org-tools*
+0 upgraded, 0 newly installed, 7 to remove and 0 not upgraded.
+After this operation, 245 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 360015 files and directories currently installed.)
+Removing mongodb-org (5.0.8) ...
+Removing mongodb-org-database (5.0.8) ...
+Removing mongodb-org-tools (5.0.8) ...
+Removing mongodb-org-database-tools-extra (5.0.8) ...
+Removing mongodb-org-mongos (5.0.8) ...
+Removing mongodb-org-server (5.0.8) ...
+Removing mongodb-org-shell (5.0.8) ...
+Processing triggers for man-db (2.9.1-1) ...
+(Reading database ... 359978 files and directories currently installed.)
+Purging configuration files for mongodb-org-database (5.0.8) ...
+Purging configuration files for mongodb-org-server (5.0.8) ...
+ike@adel:~$ sudo rm -r /var/log/mongodb
+ike@adel:~$ sudo rm -r /var/lib/mongodb
+ike@adel:~$ mongod
+bash: /usr/bin/mongod: No such file or directory
+ike@adel:~$ mongo
+bash: /usr/bin/mongo: No such file or directory
+ike@adel:~$ sudo apt-get update
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Hit:3 http://archive.canonical.com/ubuntu focal InRelease                      
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Ign:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 InRelease      
+Ign:6 http://packages.linuxmint.com una InRelease                              
+Ign:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease      
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Hit:9 http://packages.linuxmint.com una Release                                
+Hit:10 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release       
+Hit:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release       
+Hit:14 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Fetched 228 kB in 3s (87,2 kB/s)
+Reading package lists... Done
+ike@adel:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  mongodb-database-tools mongodb-mongosh
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+OK
+ike@adel:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+ike@adel:~$ sudo apt-get update
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Ign:2 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 InRelease      
+Ign:3 http://packages.linuxmint.com una InRelease                              
+Ign:4 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease      
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Hit:6 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Hit:8 http://packages.linuxmint.com una Release                                
+Hit:10 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 Release       
+Hit:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release       
+Hit:14 http://archive.ubuntu.com/ubuntu focal-backports InRelease              
+Hit:15 http://archive.canonical.com/ubuntu focal InRelease                     
+Fetched 228 kB in 31s (7.276 B/s)
+Reading package lists... Done
+ike@adel:~$ sudo apt-get install mongodb-org=4.4.8 mongodb-org-server=4.4.8 mongodb-org-shell=4.4.8 mongodb-org-mongos=4.4.8 mongodb-org-tools=4.4.8
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  mongodb-mongosh
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  mongodb-org-database-tools-extra
+The following NEW packages will be installed:
+  mongodb-org mongodb-org-database-tools-extra mongodb-org-mongos
+  mongodb-org-server mongodb-org-shell mongodb-org-tools
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/49,8 MB of archives.
+After this operation, 201 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Selecting previously unselected package mongodb-org-shell.
+(Reading database ... 359979 files and directories currently installed.)
+Preparing to unpack .../0-mongodb-org-shell_4.4.8_amd64.deb ...
+Unpacking mongodb-org-shell (4.4.8) ...
+Selecting previously unselected package mongodb-org-server.
+Preparing to unpack .../1-mongodb-org-server_4.4.8_amd64.deb ...
+Unpacking mongodb-org-server (4.4.8) ...
+Selecting previously unselected package mongodb-org-mongos.
+Preparing to unpack .../2-mongodb-org-mongos_4.4.8_amd64.deb ...
+Unpacking mongodb-org-mongos (4.4.8) ...
+Selecting previously unselected package mongodb-org-database-tools-extra.
+Preparing to unpack .../3-mongodb-org-database-tools-extra_5.0.8_amd64.deb ...
+Unpacking mongodb-org-database-tools-extra (5.0.8) ...
+Selecting previously unselected package mongodb-org-tools.
+Preparing to unpack .../4-mongodb-org-tools_4.4.8_amd64.deb ...
+Unpacking mongodb-org-tools (4.4.8) ...
+Selecting previously unselected package mongodb-org.
+Preparing to unpack .../5-mongodb-org_4.4.8_amd64.deb ...
+Unpacking mongodb-org (4.4.8) ...
+Setting up mongodb-org-server (4.4.8) ...
+Setting up mongodb-org-shell (4.4.8) ...
+Setting up mongodb-org-mongos (4.4.8) ...
+Setting up mongodb-org-database-tools-extra (5.0.8) ...
+Setting up mongodb-org-tools (4.4.8) ...
+Setting up mongodb-org (4.4.8) ...
+Processing triggers for man-db (2.9.1-1) ...
+ike@adel:~$ mongod --version
+db version v4.4.8
+Build Info: {
+    "version": "4.4.8",
+    "gitVersion": "83b8bb8b6b325d8d8d3dfd2ad9f744bdad7d6ca0",
+    "openSSLVersion": "OpenSSL 1.1.1f  31 Mar 2020",
+    "modules": [],
+    "allocator": "tcmalloc",
+    "environment": {
+        "distmod": "ubuntu2004",
+        "distarch": "x86_64",
+        "target_arch": "x86_64"
+    }
+}
+ike@adel:~$ sudo systemctl start mongod
+ike@adel:~$ sudo systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: active (running) since Thu 2022-05-19 08:15:45 WIB; 7s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 13435 (mongod)
+     Memory: 70.4M
+     CGroup: /system.slice/mongod.service
+             └─13435 /usr/bin/mongod --config /etc/mongod.conf
+
+May 19 08:15:45 adel systemd[1]: Started MongoDB Database Server.
+lines 1-10/10 (END)...skipping...
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: active (running) since Thu 2022-05-19 08:15:45 WIB; 7s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 13435 (mongod)
+     Memory: 70.4M
+     CGroup: /system.slice/mongod.service
+             └─13435 /usr/bin/mongod --config /etc/mongod.conf
+
+May 19 08:15:45 adel systemd[1]: Started MongoDB Database Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+ike@adel:~$ 
+
