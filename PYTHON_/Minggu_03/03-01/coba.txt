@@ -402,6 +402,7 @@ test
 > use adel
 switched to db adel
 > db.adel.insert({
+
 ... judul: "lya"
 ... name: "ike"
 ... })
