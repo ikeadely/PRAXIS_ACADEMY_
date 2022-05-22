@@ -183,5 +183,67 @@ drop database untuk menghapus database
 
 untuk menjalankan mongo db semua dilakukan pada terminal
 
+Operasi CRUD MongoDB
+
+Operasi CRUD membuat , membaca , memperbarui , dan menghapus dokumen .
+Buat Operasi
+
+Membuat atau menyisipkan operasi menambahkan dokumen baru ke koleksi . Jika koleksi saat ini tidak ada, operasi penyisipan akan membuat koleksi.
+
+MongoDB menyediakan metode berikut untuk memasukkan dokumen ke dalam koleksi:
+
+    db.collection.insertOne() Baru di versi 3.2
+    db.collection.insertMany() Baru di versi 3.2
+
+Di MongoDB, operasi penyisipan menargetkan satu koleksi . Semua operasi penulisan di MongoDB bersifat atomik pada level dokumen tunggal .
+Komponen operasi insertOne MongoDB.
+
+Sebagai contoh, lihat Menyisipkan Dokumen .
+Baca Operasi
+
+Baca operasi mengambil dokumen dari koleksi ; yaitu query koleksi untuk dokumen. MongoDB menyediakan metode berikut untuk membaca dokumen dari koleksi:
+
+    db.collection.find()
+
+Anda dapat menentukan filter kueri atau kriteria yang mengidentifikasi dokumen yang akan dikembalikan.
+Komponen dari operasi pencarian MongoDB.
+klik untuk memperbesar
+
+Sebagai contoh, lihat:
+
+    Dokumen Kueri
+    Kueri tentang Dokumen Tersemat/Bersarang
+    Kueri Array
+    Kueri Array Dokumen Tersemat
+
+Perbarui Operasi
+
+Operasi pembaruan memodifikasi dokumen yang ada dalam koleksi . MongoDB menyediakan metode berikut untuk memperbarui dokumen koleksi:
+
+    db.collection.updateOne() Baru di versi 3.2
+    db.collection.updateMany() Baru di versi 3.2
+    db.collection.replaceOne() Baru di versi 3.2
+
+Di MongoDB, operasi pembaruan menargetkan satu koleksi. Semua operasi penulisan di MongoDB bersifat atomik pada level satu dokumen.
+
+Anda dapat menentukan kriteria, atau filter, yang mengidentifikasi dokumen yang akan diperbarui. Filter ini menggunakan sintaks yang sama dengan operasi baca.
+Komponen operasi MongoDB updateMany.
+
+Sebagai contoh, lihat Memperbarui Dokumen .
+Hapus Operasi
+
+Hapus operasi menghapus dokumen dari koleksi. MongoDB menyediakan metode berikut untuk menghapus dokumen koleksi:
+
+    db.collection.deleteOne() Baru di versi 3.2
+    db.collection.deleteMany() Baru di versi 3.2
+
+Di MongoDB, operasi penghapusan menargetkan satu koleksi . Semua operasi penulisan di MongoDB bersifat atomik pada level satu dokumen.
+
+Anda dapat menentukan kriteria, atau filter, yang mengidentifikasi dokumen yang akan dihapus. Filter ini menggunakan sintaks yang sama dengan operasi baca.
+Komponen operasi deleteMany MongoDB.
+
+Sebagai contoh, lihat Menghapus Dokumen .
+
+
 
 
