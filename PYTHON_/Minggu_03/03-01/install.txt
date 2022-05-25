@@ -1036,3 +1036,178 @@ ike@adel:~$ sudo systemctl status mongod
 
 May 17 13:50:04 adel systemd[1]: Started MongoDB Database Server.
 
+ike@adel:~/adel$ mongo
+MongoDB shell version v4.4.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: Connection refused :
+connect@src/mongo/shell/mongo.js:374:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+ike@adel:~/adel$ sudo systemctl status mongod
+[sudo] password for ike:            
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: failed (Result: exit-code) since Wed 2022-05-25 11:16:57 WIB; 3h 7>
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 10823 (code=exited, status=1/FAILURE)
+
+May 25 11:16:54 adel systemd[1]: Started MongoDB Database Server.
+May 25 11:16:57 adel mongod[10823]: {"t":{"$date":"2022-05-25T04:16:57.171Z"},">
+May 25 11:16:57 adel systemd[1]: mongod.service: Main process exited, code=exit>
+May 25 11:16:57 adel systemd[1]: mongod.service: Failed with result 'exit-code'.
+
+ike@adel:~/adel$ sudo mongo --repair --dbpath /var/lib/mongodb
+Error parsing command line: unrecognised option '--repair'
+try 'mongo --help' for more information
+ike@adel:~/adel$ sudo mongod --repair --dbpath /var/lib/mongodb
+{"t":{"$date":"2022-05-25T14:31:02.706+07:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+{"t":{"$date":"2022-05-25T14:31:02.800+07:00"},"s":"W",  "c":"ASIO",     "id":22601,   "ctx":"main","msg":"No TransportLayer configured during NetworkInterface startup"}
+{"t":{"$date":"2022-05-25T14:31:02.800+07:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+{"t":{"$date":"2022-05-25T14:31:02.846+07:00"},"s":"I",  "c":"STORAGE",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":20042,"port":27017,"dbPath":"/var/lib/mongodb","architecture":"64-bit","host":"adel"}}
+{"t":{"$date":"2022-05-25T14:31:02.846+07:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"4.4.8","gitVersion":"83b8bb8b6b325d8d8d3dfd2ad9f744bdad7d6ca0","openSSLVersion":"OpenSSL 1.1.1f  31 Mar 2020","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2004","distarch":"x86_64","target_arch":"x86_64"}}}}
+{"t":{"$date":"2022-05-25T14:31:02.846+07:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"LinuxMint","version":"20.3"}}}
+{"t":{"$date":"2022-05-25T14:31:02.846+07:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"repair":true,"storage":{"dbPath":"/var/lib/mongodb"}}}}
+{"t":{"$date":"2022-05-25T14:31:03.018+07:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/var/lib/mongodb","storageEngine":"wiredTiger"}}
+{"t":{"$date":"2022-05-25T14:31:03.018+07:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+{"t":{"$date":"2022-05-25T14:31:03.031+07:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=412M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress,compact_progress],"}}
+{"t":{"$date":"2022-05-25T14:31:04.486+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463864:486315][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 4 through 5"}}
+{"t":{"$date":"2022-05-25T14:31:04.800+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463864:800613][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 5 through 5"}}
+{"t":{"$date":"2022-05-25T14:31:06.343+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463866:323391][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Main recovery loop: starting at 4/54272 to 5/256"}}
+{"t":{"$date":"2022-05-25T14:31:06.403+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463866:403619][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 4 through 5"}}
+{"t":{"$date":"2022-05-25T14:31:06.923+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463866:923887][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 5 through 5"}}
+{"t":{"$date":"2022-05-25T14:31:07.041+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463867:41407][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global recovery timestamp: (0, 0)"}}
+{"t":{"$date":"2022-05-25T14:31:07.041+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463867:41516][20042:0x7f59cc973cc0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global oldest timestamp: (0, 0)"}}
+{"t":{"$date":"2022-05-25T14:31:07.219+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463867:219062][20042:0x7f59cc973cc0], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 4, snapshot max: 4 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 2298"}}
+{"t":{"$date":"2022-05-25T14:31:07.910+07:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":4838}}
+{"t":{"$date":"2022-05-25T14:31:08.022+07:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+{"t":{"$date":"2022-05-25T14:31:08.431+07:00"},"s":"I",  "c":"STORAGE",  "id":22316,   "ctx":"initandlisten","msg":"Repairing size cache"}
+{"t":{"$date":"2022-05-25T14:31:08.531+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:sizeStorer"}}
+{"t":{"$date":"2022-05-25T14:31:08.681+07:00"},"s":"I",  "c":"STORAGE",  "id":22246,   "ctx":"initandlisten","msg":"Repairing catalog metadata"}
+{"t":{"$date":"2022-05-25T14:31:08.708+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:_mdb_catalog"}}
+{"t":{"$date":"2022-05-25T14:31:08.837+07:00"},"s":"I",  "c":"STORAGE",  "id":4366405, "ctx":"initandlisten","msg":"Modifying the table logging settings for all existing WiredTiger tables","attr":{"loggingEnabled":true,"repair":true,"hasPreviouslyIncompleteTableChecks":false}}
+{"t":{"$date":"2022-05-25T14:31:09.097+07:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+{"t":{"$date":"2022-05-25T14:31:09.160+07:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+{"t":{"$date":"2022-05-25T14:31:09.178+07:00"},"s":"W",  "c":"CONTROL",  "id":22138,   "ctx":"initandlisten","msg":"You are running this process as the root user, which is not recommended","tags":["startupWarnings"]}
+{"t":{"$date":"2022-05-25T14:31:09.178+07:00"},"s":"W",  "c":"CONTROL",  "id":22140,   "ctx":"initandlisten","msg":"This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning","tags":["startupWarnings"]}
+{"t":{"$date":"2022-05-25T14:31:09.178+07:00"},"s":"W",  "c":"CONTROL",  "id":22184,   "ctx":"initandlisten","msg":"Soft rlimits too low","attr":{"currentValue":1024,"recommendedMinimum":64000},"tags":["startupWarnings"]}
+{"t":{"$date":"2022-05-25T14:31:09.397+07:00"},"s":"I",  "c":"STORAGE",  "id":21029,   "ctx":"initandlisten","msg":"repairDatabase","attr":{"db":"local"}}
+{"t":{"$date":"2022-05-25T14:31:09.475+07:00"},"s":"I",  "c":"STORAGE",  "id":21027,   "ctx":"initandlisten","msg":"Repairing collection","attr":{"namespace":"local.startup_log"}}
+{"t":{"$date":"2022-05-25T14:31:09.532+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:collection-2--3727350415967041731"}}
+{"t":{"$date":"2022-05-25T14:31:09.549+07:00"},"s":"I",  "c":"INDEX",    "id":20295,   "ctx":"initandlisten","msg":"Validating internal structure","attr":{"index":"_id_","namespace":"local.startup_log"}}
+{"t":{"$date":"2022-05-25T14:31:09.594+07:00"},"s":"I",  "c":"INDEX",    "id":20303,   "ctx":"initandlisten","msg":"validating collection","attr":{"namespace":"local.startup_log","uuid":" (UUID: 4b0d30d3-54ed-4dfc-ad86-4b985b3b1123)"}}
+{"t":{"$date":"2022-05-25T14:31:09.595+07:00"},"s":"I",  "c":"INDEX",    "id":20296,   "ctx":"initandlisten","msg":"Validating index consistency","attr":{"index":"_id_","namespace":"local.startup_log"}}
+{"t":{"$date":"2022-05-25T14:31:09.612+07:00"},"s":"I",  "c":"INDEX",    "id":20306,   "ctx":"initandlisten","msg":"Validation complete for collection. No corruption found","attr":{"namespace":"local.startup_log","uuid":" (UUID: 4b0d30d3-54ed-4dfc-ad86-4b985b3b1123)"}}
+{"t":{"$date":"2022-05-25T14:31:09.613+07:00"},"s":"I",  "c":"STORAGE",  "id":21028,   "ctx":"initandlisten","msg":"Collection validation","attr":{"results":{"ns":"local.startup_log","nInvalidDocuments":0,"nrecords":4,"nIndexes":1,"keysPerIndex":{"_id_":4},"indexDetails":{"_id_":{"valid":true}}}}}
+{"t":{"$date":"2022-05-25T14:31:09.624+07:00"},"s":"I",  "c":"STORAGE",  "id":21029,   "ctx":"initandlisten","msg":"repairDatabase","attr":{"db":"admin"}}
+{"t":{"$date":"2022-05-25T14:31:09.627+07:00"},"s":"I",  "c":"STORAGE",  "id":21027,   "ctx":"initandlisten","msg":"Repairing collection","attr":{"namespace":"admin.system.version"}}
+{"t":{"$date":"2022-05-25T14:31:09.641+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:collection-0--3727350415967041731"}}
+{"t":{"$date":"2022-05-25T14:31:09.643+07:00"},"s":"I",  "c":"INDEX",    "id":20295,   "ctx":"initandlisten","msg":"Validating internal structure","attr":{"index":"_id_","namespace":"admin.system.version"}}
+{"t":{"$date":"2022-05-25T14:31:09.667+07:00"},"s":"I",  "c":"INDEX",    "id":20303,   "ctx":"initandlisten","msg":"validating collection","attr":{"namespace":"admin.system.version","uuid":" (UUID: 90536f50-fece-4439-b0d6-c473a77270ec)"}}
+{"t":{"$date":"2022-05-25T14:31:09.668+07:00"},"s":"I",  "c":"INDEX",    "id":20296,   "ctx":"initandlisten","msg":"Validating index consistency","attr":{"index":"_id_","namespace":"admin.system.version"}}
+{"t":{"$date":"2022-05-25T14:31:09.668+07:00"},"s":"I",  "c":"INDEX",    "id":20306,   "ctx":"initandlisten","msg":"Validation complete for collection. No corruption found","attr":{"namespace":"admin.system.version","uuid":" (UUID: 90536f50-fece-4439-b0d6-c473a77270ec)"}}
+{"t":{"$date":"2022-05-25T14:31:09.668+07:00"},"s":"I",  "c":"STORAGE",  "id":21028,   "ctx":"initandlisten","msg":"Collection validation","attr":{"results":{"ns":"admin.system.version","nInvalidDocuments":0,"nrecords":1,"nIndexes":1,"keysPerIndex":{"_id_":1},"indexDetails":{"_id_":{"valid":true}}}}}
+{"t":{"$date":"2022-05-25T14:31:09.668+07:00"},"s":"I",  "c":"STORAGE",  "id":21029,   "ctx":"initandlisten","msg":"repairDatabase","attr":{"db":"config"}}
+{"t":{"$date":"2022-05-25T14:31:09.670+07:00"},"s":"I",  "c":"STORAGE",  "id":21027,   "ctx":"initandlisten","msg":"Repairing collection","attr":{"namespace":"config.system.sessions"}}
+{"t":{"$date":"2022-05-25T14:31:09.818+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:collection-4--3727350415967041731"}}
+{"t":{"$date":"2022-05-25T14:31:09.820+07:00"},"s":"I",  "c":"INDEX",    "id":20295,   "ctx":"initandlisten","msg":"Validating internal structure","attr":{"index":"_id_","namespace":"config.system.sessions"}}
+{"t":{"$date":"2022-05-25T14:31:09.988+07:00"},"s":"I",  "c":"INDEX",    "id":20295,   "ctx":"initandlisten","msg":"Validating internal structure","attr":{"index":"lsidTTLIndex","namespace":"config.system.sessions"}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"INDEX",    "id":20303,   "ctx":"initandlisten","msg":"validating collection","attr":{"namespace":"config.system.sessions","uuid":" (UUID: df5448bb-4bb2-4ee1-bc5d-2e2d0a22a828)"}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"INDEX",    "id":20296,   "ctx":"initandlisten","msg":"Validating index consistency","attr":{"index":"_id_","namespace":"config.system.sessions"}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"INDEX",    "id":20296,   "ctx":"initandlisten","msg":"Validating index consistency","attr":{"index":"lsidTTLIndex","namespace":"config.system.sessions"}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"INDEX",    "id":20306,   "ctx":"initandlisten","msg":"Validation complete for collection. No corruption found","attr":{"namespace":"config.system.sessions","uuid":" (UUID: df5448bb-4bb2-4ee1-bc5d-2e2d0a22a828)"}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"STORAGE",  "id":21028,   "ctx":"initandlisten","msg":"Collection validation","attr":{"results":{"ns":"config.system.sessions","nInvalidDocuments":0,"nrecords":9,"nIndexes":2,"keysPerIndex":{"_id_":9,"lsidTTLIndex":9},"indexDetails":{"_id_":{"valid":true},"lsidTTLIndex":{"valid":true}}}}}
+{"t":{"$date":"2022-05-25T14:31:10.084+07:00"},"s":"I",  "c":"STORAGE",  "id":21029,   "ctx":"initandlisten","msg":"repairDatabase","attr":{"db":"DatabaseCompass"}}
+{"t":{"$date":"2022-05-25T14:31:10.085+07:00"},"s":"I",  "c":"STORAGE",  "id":21027,   "ctx":"initandlisten","msg":"Repairing collection","attr":{"namespace":"DatabaseCompass.examples"}}
+{"t":{"$date":"2022-05-25T14:31:10.201+07:00"},"s":"I",  "c":"STORAGE",  "id":22327,   "ctx":"initandlisten","msg":"Verify succeeded. Not salvaging.","attr":{"uri":"table:collection-0--613888174745613909"}}
+{"t":{"$date":"2022-05-25T14:31:10.204+07:00"},"s":"I",  "c":"INDEX",    "id":20295,   "ctx":"initandlisten","msg":"Validating internal structure","attr":{"index":"_id_","namespace":"DatabaseCompass.examples"}}
+{"t":{"$date":"2022-05-25T14:31:10.254+07:00"},"s":"I",  "c":"INDEX",    "id":20303,   "ctx":"initandlisten","msg":"validating collection","attr":{"namespace":"DatabaseCompass.examples","uuid":" (UUID: 65ee23ac-b93a-4a24-8f73-43fa418947ca)"}}
+{"t":{"$date":"2022-05-25T14:31:10.254+07:00"},"s":"I",  "c":"INDEX",    "id":20296,   "ctx":"initandlisten","msg":"Validating index consistency","attr":{"index":"_id_","namespace":"DatabaseCompass.examples"}}
+{"t":{"$date":"2022-05-25T14:31:10.254+07:00"},"s":"I",  "c":"INDEX",    "id":20306,   "ctx":"initandlisten","msg":"Validation complete for collection. No corruption found","attr":{"namespace":"DatabaseCompass.examples","uuid":" (UUID: 65ee23ac-b93a-4a24-8f73-43fa418947ca)"}}
+{"t":{"$date":"2022-05-25T14:31:10.254+07:00"},"s":"I",  "c":"STORAGE",  "id":21028,   "ctx":"initandlisten","msg":"Collection validation","attr":{"results":{"ns":"DatabaseCompass.examples","nInvalidDocuments":0,"nrecords":4,"nIndexes":1,"keysPerIndex":{"_id_":4},"indexDetails":{"_id_":{"valid":true}}}}}
+{"t":{"$date":"2022-05-25T14:31:10.434+07:00"},"s":"I",  "c":"STORAGE",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+{"t":{"$date":"2022-05-25T14:31:10.440+07:00"},"s":"I",  "c":"STORAGE",  "id":20537,   "ctx":"initandlisten","msg":"Finished checking dbs"}
+{"t":{"$date":"2022-05-25T14:31:10.440+07:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"initandlisten","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":10000}}
+{"t":{"$date":"2022-05-25T14:31:10.576+07:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"initandlisten","msg":"Shutting down the MirrorMaestro"}
+{"t":{"$date":"2022-05-25T14:31:10.576+07:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"initandlisten","msg":"Shutting down the WaitForMajorityService"}
+{"t":{"$date":"2022-05-25T14:31:10.583+07:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"initandlisten","msg":"Shutting down the global connection pool"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"STORAGE",  "id":4784906, "ctx":"initandlisten","msg":"Shutting down the FlowControlTicketholder"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"initandlisten","msg":"Stopping further Flow Control ticket acquisitions."}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"STORAGE",  "id":4784908, "ctx":"initandlisten","msg":"Shutting down the PeriodicThreadToAbortExpiredTransactions"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"STORAGE",  "id":4784934, "ctx":"initandlisten","msg":"Shutting down the PeriodicThreadToDecreaseSnapshotHistoryCachePressure"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"initandlisten","msg":"Shutting down the ReplicationCoordinator"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"initandlisten","msg":"Shutting down the ShardingInitializationMongoD"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"initandlisten","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"initandlisten","msg":"Killing all operations for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"initandlisten","msg":"Interrupted all currently running operations","attr":{"opsKilled":3}}
+{"t":{"$date":"2022-05-25T14:31:10.599+07:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"initandlisten","msg":"Shutting down all open transactions"}
+{"t":{"$date":"2022-05-25T14:31:10.605+07:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"initandlisten","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.605+07:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"initandlisten","msg":"Shutting down the IndexBuildsCoordinator"}
+{"t":{"$date":"2022-05-25T14:31:10.606+07:00"},"s":"I",  "c":"REPL",     "id":4784916, "ctx":"initandlisten","msg":"Reacquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.606+07:00"},"s":"I",  "c":"REPL",     "id":4784917, "ctx":"initandlisten","msg":"Attempting to mark clean shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.612+07:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"initandlisten","msg":"Shutting down the ReplicaSetMonitor"}
+{"t":{"$date":"2022-05-25T14:31:10.612+07:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"initandlisten","msg":"Shutting down the MigrationUtilExecutor"}
+{"t":{"$date":"2022-05-25T14:31:10.622+07:00"},"s":"I",  "c":"CONTROL",  "id":4784925, "ctx":"initandlisten","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2022-05-25T14:31:10.636+07:00"},"s":"I",  "c":"STORAGE",  "id":4784927, "ctx":"initandlisten","msg":"Shutting down the HealthLog"}
+{"t":{"$date":"2022-05-25T14:31:10.636+07:00"},"s":"I",  "c":"STORAGE",  "id":4784929, "ctx":"initandlisten","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:10.636+07:00"},"s":"I",  "c":"STORAGE",  "id":4784930, "ctx":"initandlisten","msg":"Shutting down the storage engine"}
+{"t":{"$date":"2022-05-25T14:31:10.645+07:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"initandlisten","msg":"Shutting down journal flusher thread"}
+{"t":{"$date":"2022-05-25T14:31:10.645+07:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"initandlisten","msg":"Finished shutting down journal flusher thread"}
+{"t":{"$date":"2022-05-25T14:31:10.645+07:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"initandlisten","msg":"Deregistering all the collections"}
+{"t":{"$date":"2022-05-25T14:31:10.645+07:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"initandlisten","msg":"Timestamp monitor shutting down"}
+{"t":{"$date":"2022-05-25T14:31:10.651+07:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"initandlisten","msg":"WiredTigerKVEngine shutting down"}
+{"t":{"$date":"2022-05-25T14:31:10.677+07:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"initandlisten","msg":"Shutting down session sweeper thread"}
+{"t":{"$date":"2022-05-25T14:31:10.677+07:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"initandlisten","msg":"Finished shutting down session sweeper thread"}
+{"t":{"$date":"2022-05-25T14:31:10.677+07:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"initandlisten","msg":"Shutting down checkpoint thread"}
+{"t":{"$date":"2022-05-25T14:31:10.677+07:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"initandlisten","msg":"Finished shutting down checkpoint thread"}
+{"t":{"$date":"2022-05-25T14:31:10.677+07:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"initandlisten","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,"}}
+{"t":{"$date":"2022-05-25T14:31:10.686+07:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1653463870:686575][20042:0x7f59cc973cc0], close_ckpt: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 6, snapshot max: 6 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 2299"}}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"STORAGE",  "id":4795901, "ctx":"initandlisten","msg":"WiredTiger closed","attr":{"durationMillis":439}}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"STORAGE",  "id":22279,   "ctx":"initandlisten","msg":"shutdown: removing fs lock..."}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"initandlisten","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"FTDC",     "id":4784926, "ctx":"initandlisten","msg":"Shutting down full-time data capture"}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"initandlisten","msg":"Now exiting"}
+{"t":{"$date":"2022-05-25T14:31:11.116+07:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"initandlisten","msg":"Shutting down","attr":{"exitCode":0}}
+ike@adel:~/adel$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
+about to fork child process, waiting until server is ready for connections.
+forked process: 20097
+child process started successfully, parent exiting
+ike@adel:~/adel$ mongo
+MongoDB shell version v4.4.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("41521ef9-6711-4f9e-a268-a8f98a96be0c") }
+MongoDB server version: 4.4.8
+---
+The server generated these startup warnings when booting: 
+        2022-05-25T14:32:37.567+07:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-05-25T14:32:40.441+07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-05-25T14:32:40.441+07:00: You are running this process as the root user, which is not recommended
+        2022-05-25T14:32:40.441+07:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+        2022-05-25T14:32:40.441+07:00: Soft rlimits too low
+        2022-05-25T14:32:40.441+07:00:         currentValue: 1024
+        2022-05-25T14:32:40.441+07:00:         recommendedMinimum: 64000
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db
+test
+> show dbs
+DatabaseCompass  0.000GB
+admin            0.000GB
+config           0.000GB
+local            0.000GB
+> exit
+bye
+ike@adel:~/adel$ 
+
+
+
