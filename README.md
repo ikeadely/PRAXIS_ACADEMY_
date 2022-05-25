@@ -8,3 +8,5 @@ latihan membuat database mongodb,
 latihan menggunakan mongodb atlas, 
 mongodb compass,
 
+
+
