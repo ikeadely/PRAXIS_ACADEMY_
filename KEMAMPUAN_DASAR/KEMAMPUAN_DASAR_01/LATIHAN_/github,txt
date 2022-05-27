@@ -1,0 +1,18 @@
+contribution setting
+
+
+ike@adel:~/PRAXIS_ACADEMY_$ git config --global user.name "ikeadely"
+ike@adel:~/PRAXIS_ACADEMY_$ git config --global user.email "dwike.adelya@gmail.com"
+ike@adel:~/PRAXIS_ACADEMY_$ git config --list
+user.name=ikeadely
+user.email=dwike.adelya@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/ikeadely/PRAXIS_ACADEMY_.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.ikeadely.remote=origin
+branch.ikeadely.merge=refs/heads/ikeadely
+ike@adel:~/PRAXIS_ACADEMY_$ 
+
