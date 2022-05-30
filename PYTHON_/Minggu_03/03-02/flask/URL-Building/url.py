@@ -3,11 +3,11 @@ app = Flask(__name__)
 
 @app.route('/admin')
 def hello_admin():
-    return 'Hello Admin'
+    return 'Hello ADel'
 
-@app.route('/guest/<guest>')
-def hello_user(name):
-    return 'Hello %s as Guest' % guest 
+@app.route('/anggota/<anggota>')
+def hello_anggota(anggota):
+    return f'Selamat Datang ADel {anggota}'
 
 @app.route('/user/<name>')
 def hello_user(name):
