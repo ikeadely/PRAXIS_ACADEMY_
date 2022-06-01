@@ -1,0 +1,26 @@
+ike@adel:~/PRAXIS_ACADEMY_/PYTHON_/Minggu_04/YOUTUBE(WORKSPACES)/Flask_API_Mongo$ pip3 install mongoengine flask-mongoengine dnspython
+Collecting mongoengine
+  Downloading mongoengine-0.24.1-py3-none-any.whl (108 kB)
+     |████████████████████████████████| 108 kB 252 kB/s 
+Collecting flask-mongoengine
+  Downloading flask_mongoengine-1.0.0-py3-none-any.whl (25 kB)
+Requirement already satisfied: dnspython in /home/ike/.local/lib/python3.8/site-packages (2.2.1)
+Requirement already satisfied: pymongo<5.0,>=3.4 in /home/ike/.local/lib/python3.8/site-packages (from mongoengine) (4.1.1)
+Collecting Flask-WTF>=0.14.3
+  Downloading Flask_WTF-1.0.1-py3-none-any.whl (12 kB)
+Collecting WTForms[email]>=2.3.1
+  Downloading WTForms-3.0.1-py3-none-any.whl (136 kB)
+     |████████████████████████████████| 136 kB 342 kB/s 
+Requirement already satisfied: Flask>=1.1.2 in /home/ike/.local/lib/python3.8/site-packages (from flask-mongoengine) (2.1.2)
+Requirement already satisfied: itsdangerous in /home/ike/.local/lib/python3.8/site-packages (from Flask-WTF>=0.14.3->flask-mongoengine) (2.1.2)
+Requirement already satisfied: MarkupSafe in /home/ike/.local/lib/python3.8/site-packages (from WTForms[email]>=2.3.1->flask-mongoengine) (2.1.1)
+Collecting email-validator; extra == "email"
+  Downloading email_validator-1.2.1-py2.py3-none-any.whl (22 kB)
+Requirement already satisfied: Jinja2>=3.0 in /home/ike/.local/lib/python3.8/site-packages (from Flask>=1.1.2->flask-mongoengine) (3.1.2)
+Requirement already satisfied: importlib-metadata>=3.6.0; python_version < "3.10" in /home/ike/.local/lib/python3.8/site-packages (from Flask>=1.1.2->flask-mongoengine) (4.11.4)
+Requirement already satisfied: Werkzeug>=2.0 in /home/ike/.local/lib/python3.8/site-packages (from Flask>=1.1.2->flask-mongoengine) (2.1.2)
+Requirement already satisfied: click>=8.0 in /home/ike/.local/lib/python3.8/site-packages (from Flask>=1.1.2->flask-mongoengine) (8.1.3)
+Requirement already satisfied: idna>=2.0.0 in /usr/lib/python3/dist-packages (from email-validator; extra == "email"->WTForms[email]>=2.3.1->flask-mongoengine) (2.8)
+Requirement already satisfied: zipp>=0.5 in /home/ike/.local/lib/python3.8/site-packages (from importlib-metadata>=3.6.0; python_version < "3.10"->Flask>=1.1.2->flask-mongoengine) (3.8.0)
+Installing collected packages: mongoengine, email-validator, WTForms, Flask-WTF, flask-mongoengine
+Successfully installed Flask-WTF-1.0.1 WTForms-3.0.1 email-validator-1.2.1 flask-mongoengine-1.0.0 mongoengine-0.24.1

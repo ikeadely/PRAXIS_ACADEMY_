@@ -43,6 +43,7 @@ drwxrwxr-x 4 ike ike 4096 May 20 15:19 env
 
 #mengaktifkan env dalam flask-app
 ike@adel:~/flask-app$ source env/bin/activate
+
 (env) ike@adel:~/flask-app$ pip install flask
 Collecting flask
   Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
