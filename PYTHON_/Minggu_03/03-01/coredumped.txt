@@ -215,9 +215,10 @@ May 19 08:06:31 adel systemd[1]: mongod.service: Failed with result 'core-dump'.
 ~
 ~
 ~
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 ike@adel:~$ sudo system mongod stop
 sudo: system: command not found
+
 ike@adel:~$ sudo apt-get purge mongodb-org*
 Reading package lists... Done
 Building dependency tree       
@@ -265,12 +266,17 @@ Processing triggers for man-db (2.9.1-1) ...
 (Reading database ... 359978 files and directories currently installed.)
 Purging configuration files for mongodb-org-database (5.0.8) ...
 Purging configuration files for mongodb-org-server (5.0.8) ...
+
 ike@adel:~$ sudo rm -r /var/log/mongodb
+
 ike@adel:~$ sudo rm -r /var/lib/mongodb
+
 ike@adel:~$ mongod
 bash: /usr/bin/mongod: No such file or directory
+
 ike@adel:~$ mongo
 bash: /usr/bin/mongo: No such file or directory
+
 ike@adel:~$ sudo apt-get update
 Hit:1 http://packages.microsoft.com/repos/code stable InRelease
 Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
@@ -295,8 +301,10 @@ The following packages were automatically installed and are no longer required:
   mongodb-database-tools mongodb-mongosh
 Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 ike@adel:~$ wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 OK
+
 ike@adel:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
 ike@adel:~$ sudo apt-get update
@@ -314,6 +322,7 @@ Hit:14 http://archive.ubuntu.com/ubuntu focal-backports InRelease
 Hit:15 http://archive.canonical.com/ubuntu focal InRelease                     
 Fetched 228 kB in 31s (7.276 B/s)
 Reading package lists... Done
+
 ike@adel:~$ sudo apt-get install mongodb-org=4.4.8 mongodb-org-server=4.4.8 mongodb-org-shell=4.4.8 mongodb-org-mongos=4.4.8 mongodb-org-tools=4.4.8
 Reading package lists... Done
 Building dependency tree       
@@ -356,6 +365,7 @@ Setting up mongodb-org-database-tools-extra (5.0.8) ...
 Setting up mongodb-org-tools (4.4.8) ...
 Setting up mongodb-org (4.4.8) ...
 Processing triggers for man-db (2.9.1-1) ...
+
 ike@adel:~$ mongod --version
 db version v4.4.8
 Build Info: {
@@ -370,7 +380,9 @@ Build Info: {
         "target_arch": "x86_64"
     }
 }
+
 ike@adel:~$ sudo systemctl start mongod
+
 ike@adel:~$ sudo systemctl status mongod
 ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
