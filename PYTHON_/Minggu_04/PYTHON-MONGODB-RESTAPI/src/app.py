@@ -1,5 +1,5 @@
 from crypt import methods
-from flask import Flask, request, 
+from flask import Flask, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
