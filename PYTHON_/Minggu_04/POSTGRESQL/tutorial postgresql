@@ -1,0 +1,65 @@
+(mengganti password postgresql)
+
+ikeadely@ikeadely-Inspiron-N4030:~$ sudo -i -u postgres
+[sudo] password for ikeadely:          
+postgres@ikeadely-Inspiron-N4030:~$ psql
+psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
+Type "help" for help.
+
+
+
+--------------------------------------------------------------------------------------------------
+
+(keluar)
+adely=# \q
+
+
+
+(menambahkan user)
+adely=# CREATE USER suppliers WITH SUPERUSER LOGIN PASSWORD '********';
+CREATE ROLE
+
+(membuat database)
+adely=# CREATE DATABASE suppliers WITH OWNER suppliers;
+CREATE DATABASE
+
+(keluar)
+adely=# \q
+
+(masuk kedalam database)
+postgres@ikeadely-Inspiron-N4030:~$ psql -h localhost -U suppliers
+Password for user suppliers: 
+psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+suppliers=# \dt
+Did not find any relations.
+suppliers=# \dt
+Did not find any relations.
+suppliers=# 
+
+------------------------------------------------------------------------------------
+(masuk ke database)
+ikeadely@ikeadely-Inspiron-N4030:~$ psql -h localhost -U suppliers
+Password for user suppliers: 
+psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+suppliers=# \dt
+Did not find any relations.
+
+
+(melihat table)
+suppliers=# \dt
+             List of relations
+ Schema |     Name      | Type  |   Owner   
+--------+---------------+-------+-----------
+ public | part_drawings | table | suppliers
+ public | parts         | table | suppliers
+ public | vendor_parts  | table | suppliers
+ public | vendors       | table | suppliers
+(4 rows)
+
+suppliers=# 
