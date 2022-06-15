@@ -1,18 +1,18 @@
-(mengganti password postgresql)
+(cara masuk kedalam postgresql)
 
 ikeadely@ikeadely-Inspiron-N4030:~$ sudo -i -u postgres
-[sudo] password for ikeadely:          
+[sudo] password for ikeadely:      
+    
 postgres@ikeadely-Inspiron-N4030:~$ psql
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
 Type "help" for help.
-
-
 
 --------------------------------------------------------------------------------------------------
 
 (keluar)
 adely=# \q
 
+--------------------------------------------------------------------------------------------------
 
 
 (menambahkan user)
