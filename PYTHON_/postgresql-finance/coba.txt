@@ -1,5 +1,0 @@
-select *form nama-table
-
-
-insert into nama table (.... , ....)
-values ('..' , '..');
