@@ -16,7 +16,8 @@ adely=# \q
 
 
 (menambahkan user)
-adely=# CREATE USER suppliers WITH SUPERUSER LOGIN PASSWORD '********';
+adely=# psql
+\qCREATE USER suppliers WITH SUPERUSER LOGIN PASSWORD '********';
 CREATE ROLE
 
 (membuat database)
