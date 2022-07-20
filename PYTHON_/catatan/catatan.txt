@@ -1,0 +1,16 @@
+Batasan berikut biasanya digunakan dalam SQL:
+
+     NOT NULL - Memastikan bahwa kolom tidak boleh memiliki nilai NULL
+     UNIQUE - Memastikan bahwa semua nilai dalam kolom berbeda
+     PRIMARY KEY - Kombinasi NOT NULL dan UNIK. Secara unik mengidentifikasi setiap baris dalam tabel
+     FOREIGN KEY - Mencegah tindakan yang akan menghancurkan tautan antar tabel
+     CHECK - Memastikan bahwa nilai dalam kolom memenuhi kondisi tertentu
+     DEFAULT - Menetapkan nilai default untuk kolom jika tidak ada nilai yang ditentukan
+     CREATE INDEX - Digunakan untuk membuat dan mengambil data dari database dengan sangat cepat
+
+
+postgresql data types
+
+https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-boolean/
+
+
